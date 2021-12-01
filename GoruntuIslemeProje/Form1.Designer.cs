@@ -58,9 +58,12 @@ namespace GoruntuIslemeProje
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pcborjinalResim = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.grpPlcIslemler = new System.Windows.Forms.GroupBox();
+            this.rdbparlaklilkarsitlik = new System.Windows.Forms.RadioButton();
+            this.rdbkarsitlik = new System.Windows.Forms.RadioButton();
+            this.rdbparlaklik = new System.Windows.Forms.RadioButton();
             this.grpnoktaislemler = new System.Windows.Forms.GroupBox();
             this.btnNoktaIslemYap = new System.Windows.Forms.Button();
-            this.rdbhstgrmesitleme = new System.Windows.Forms.RadioButton();
             this.rdbhistogramesitleme = new System.Windows.Forms.RadioButton();
             this.rdbgriseviye = new System.Windows.Forms.RadioButton();
             this.rdbparcalilineer = new System.Windows.Forms.RadioButton();
@@ -93,6 +96,7 @@ namespace GoruntuIslemeProje
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcborjinalResim)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.grpPlcIslemler.SuspendLayout();
             this.grpnoktaislemler.SuspendLayout();
             this.grpislenen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbis)).BeginInit();
@@ -400,6 +404,7 @@ namespace GoruntuIslemeProje
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.grpPlcIslemler);
             this.tabPage2.Controls.Add(this.grpnoktaislemler);
             this.tabPage2.Controls.Add(this.grpislenen);
             this.tabPage2.Controls.Add(this.grporjinal);
@@ -411,10 +416,54 @@ namespace GoruntuIslemeProje
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nokta İşlemleri";
             // 
+            // grpPlcIslemler
+            // 
+            this.grpPlcIslemler.Controls.Add(this.rdbparlaklilkarsitlik);
+            this.grpPlcIslemler.Controls.Add(this.rdbkarsitlik);
+            this.grpPlcIslemler.Controls.Add(this.rdbparlaklik);
+            this.grpPlcIslemler.Location = new System.Drawing.Point(504, 332);
+            this.grpPlcIslemler.Name = "grpPlcIslemler";
+            this.grpPlcIslemler.Size = new System.Drawing.Size(200, 100);
+            this.grpPlcIslemler.TabIndex = 5;
+            this.grpPlcIslemler.TabStop = false;
+            this.grpPlcIslemler.Text = "PLC İşlemleri";
+            // 
+            // rdbparlaklilkarsitlik
+            // 
+            this.rdbparlaklilkarsitlik.AutoSize = true;
+            this.rdbparlaklilkarsitlik.Location = new System.Drawing.Point(7, 77);
+            this.rdbparlaklilkarsitlik.Name = "rdbparlaklilkarsitlik";
+            this.rdbparlaklilkarsitlik.Size = new System.Drawing.Size(144, 21);
+            this.rdbparlaklilkarsitlik.TabIndex = 2;
+            this.rdbparlaklilkarsitlik.TabStop = true;
+            this.rdbparlaklilkarsitlik.Text = "Parlaklık + Karşıtlık";
+            this.rdbparlaklilkarsitlik.UseVisualStyleBackColor = true;
+            // 
+            // rdbkarsitlik
+            // 
+            this.rdbkarsitlik.AutoSize = true;
+            this.rdbkarsitlik.Location = new System.Drawing.Point(7, 52);
+            this.rdbkarsitlik.Name = "rdbkarsitlik";
+            this.rdbkarsitlik.Size = new System.Drawing.Size(121, 21);
+            this.rdbkarsitlik.TabIndex = 1;
+            this.rdbkarsitlik.TabStop = true;
+            this.rdbkarsitlik.Text = "Karşıtlık(a=0.5)";
+            this.rdbkarsitlik.UseVisualStyleBackColor = true;
+            // 
+            // rdbparlaklik
+            // 
+            this.rdbparlaklik.AutoSize = true;
+            this.rdbparlaklik.Location = new System.Drawing.Point(7, 24);
+            this.rdbparlaklik.Name = "rdbparlaklik";
+            this.rdbparlaklik.Size = new System.Drawing.Size(125, 21);
+            this.rdbparlaklik.TabIndex = 0;
+            this.rdbparlaklik.TabStop = true;
+            this.rdbparlaklik.Text = "Parlaklık (b=50)";
+            this.rdbparlaklik.UseVisualStyleBackColor = true;
+            // 
             // grpnoktaislemler
             // 
             this.grpnoktaislemler.Controls.Add(this.btnNoktaIslemYap);
-            this.grpnoktaislemler.Controls.Add(this.rdbhstgrmesitleme);
             this.grpnoktaislemler.Controls.Add(this.rdbhistogramesitleme);
             this.grpnoktaislemler.Controls.Add(this.rdbgriseviye);
             this.grpnoktaislemler.Controls.Add(this.rdbparcalilineer);
@@ -431,24 +480,13 @@ namespace GoruntuIslemeProje
             // 
             // btnNoktaIslemYap
             // 
-            this.btnNoktaIslemYap.Location = new System.Drawing.Point(261, 120);
+            this.btnNoktaIslemYap.Location = new System.Drawing.Point(261, 80);
             this.btnNoktaIslemYap.Name = "btnNoktaIslemYap";
-            this.btnNoktaIslemYap.Size = new System.Drawing.Size(204, 35);
+            this.btnNoktaIslemYap.Size = new System.Drawing.Size(204, 75);
             this.btnNoktaIslemYap.TabIndex = 8;
             this.btnNoktaIslemYap.Text = "İşlem Yap";
             this.btnNoktaIslemYap.UseVisualStyleBackColor = true;
             this.btnNoktaIslemYap.Click += new System.EventHandler(this.btnNoktaIslemYap_Click);
-            // 
-            // rdbhstgrmesitleme
-            // 
-            this.rdbhstgrmesitleme.AutoSize = true;
-            this.rdbhstgrmesitleme.Location = new System.Drawing.Point(261, 81);
-            this.rdbhstgrmesitleme.Name = "rdbhstgrmesitleme";
-            this.rdbhstgrmesitleme.Size = new System.Drawing.Size(159, 21);
-            this.rdbhstgrmesitleme.TabIndex = 7;
-            this.rdbhstgrmesitleme.TabStop = true;
-            this.rdbhstgrmesitleme.Text = "Histogram Eşleştirme";
-            this.rdbhstgrmesitleme.UseVisualStyleBackColor = true;
             // 
             // rdbhistogramesitleme
             // 
@@ -482,6 +520,7 @@ namespace GoruntuIslemeProje
             this.rdbparcalilineer.TabStop = true;
             this.rdbparcalilineer.Text = "Parçalı Lineer Dönüşüm";
             this.rdbparcalilineer.UseVisualStyleBackColor = true;
+            this.rdbparcalilineer.CheckedChanged += new System.EventHandler(this.rdbparcalilineer_CheckedChanged);
             // 
             // rdbgamma
             // 
@@ -681,6 +720,8 @@ namespace GoruntuIslemeProje
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcborjinalResim)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.grpPlcIslemler.ResumeLayout(false);
+            this.grpPlcIslemler.PerformLayout();
             this.grpnoktaislemler.ResumeLayout(false);
             this.grpnoktaislemler.PerformLayout();
             this.grpislenen.ResumeLayout(false);
@@ -740,7 +781,6 @@ namespace GoruntuIslemeProje
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.GroupBox grpnoktaislemler;
         private System.Windows.Forms.Button btnNoktaIslemYap;
-        private System.Windows.Forms.RadioButton rdbhstgrmesitleme;
         private System.Windows.Forms.RadioButton rdbhistogramesitleme;
         private System.Windows.Forms.RadioButton rdbgriseviye;
         private System.Windows.Forms.RadioButton rdbparcalilineer;
@@ -748,6 +788,10 @@ namespace GoruntuIslemeProje
         private System.Windows.Forms.RadioButton rdblogdonusum;
         private System.Windows.Forms.RadioButton rdbesikleme;
         private System.Windows.Forms.RadioButton rdbtersleme;
+        private System.Windows.Forms.GroupBox grpPlcIslemler;
+        private System.Windows.Forms.RadioButton rdbparlaklilkarsitlik;
+        private System.Windows.Forms.RadioButton rdbkarsitlik;
+        private System.Windows.Forms.RadioButton rdbparlaklik;
     }
 }
 

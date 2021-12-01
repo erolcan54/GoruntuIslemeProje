@@ -42,6 +42,7 @@ namespace GoruntuIslemeProje
                 grpdondurme.Visible = false;
                 grpislenen.Visible = false;
                 grpnoktaislemler.Visible = false;
+                grpPlcIslemler.Visible = false;
             }
         }
 
@@ -77,7 +78,7 @@ namespace GoruntuIslemeProje
 
         private void btnNoktaIslemYap_Click(object sender, EventArgs e)
         {
-            if (!rdbesikleme.Checked && !rdbgamma.Checked && !rdbgriseviye.Checked && !rdbhistogramesitleme.Checked && !rdbhstgrmesitleme.Checked && !rdblogdonusum.Checked && !rdbparcalilineer.Checked && !rdbtersleme.Checked)
+            if (!rdbesikleme.Checked && !rdbgamma.Checked && !rdbgriseviye.Checked && !rdbhistogramesitleme.Checked && !rdbhstgrmeslestirme.Checked && !rdblogdonusum.Checked && !rdbparcalilineer.Checked && !rdbtersleme.Checked)
             {
                 MessageBox.Show("İşlem seçmediniz.");
                 return;
@@ -111,6 +112,34 @@ namespace GoruntuIslemeProje
                 pcbis.Visible = true;
             }
 
+            else if(rdbparlaklik.Checked)
+            {
+                grpislenen.Visible = true;
+                Bitmap resim = noktasalIslemler.Parlaklik(pcbor.Image);
+                pcbis.Image = resim;
+                pcbis.Visible = true;
+            }
+            else if(rdbkarsitlik.Checked)
+            {
+                grpislenen.Visible = true;
+                Bitmap resim = noktasalIslemler.Karsitlik(pcbor.Image);
+                pcbis.Image = resim;
+                pcbis.Visible = true;
+            }
+            else if(rdbparlaklilkarsitlik.Checked)
+            {
+                grpislenen.Visible = true;
+                Bitmap resim = noktasalIslemler.ParlaklikKarsitlik(pcbor.Image);
+                pcbis.Image = resim;
+                pcbis.Visible = true;
+            }
+            else if(rdbhistogramesitleme.Checked)
+            {
+                grpislenen.Visible = true;
+                Bitmap resim = noktasalIslemler.Histogramsitleme(pcbor.Image);
+                pcbis.Image = resim;
+                pcbis.Visible = true;
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -246,5 +275,19 @@ namespace GoruntuIslemeProje
             }
         }
 
+        private void rdbparcalilineer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbparcalilineer.Checked)
+            {
+                grpPlcIslemler.Visible = true;
+            }
+            else
+            {
+                grpPlcIslemler.Visible = false;
+                rdbparlaklik.Checked = false;
+                rdbparlaklilkarsitlik.Checked = false;
+                rdbkarsitlik.Checked = false;
+            }
+        }
     }
 }
