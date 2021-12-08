@@ -77,14 +77,24 @@ namespace GoruntuIslemeProje
             this.pcbor = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.grpUzamsalIslemler = new System.Windows.Forms.GroupBox();
+            this.btnUzamsalIslemler = new System.Windows.Forms.Button();
+            this.saltandpepperGurultu = new System.Windows.Forms.RadioButton();
+            this.uniformGurultu = new System.Windows.Forms.RadioButton();
+            this.exponentialGurultu = new System.Windows.Forms.RadioButton();
+            this.rayleighGurultu = new System.Windows.Forms.RadioButton();
+            this.gaussGurultu = new System.Windows.Forms.RadioButton();
+            this.grpUzamsalIslenenResim = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnUzamsalResimYukle = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctUzamsalorjinal = new System.Windows.Forms.PictureBox();
+            this.pctUzamsalIslenen = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grpdondurme.SuspendLayout();
@@ -102,8 +112,14 @@ namespace GoruntuIslemeProje
             ((System.ComponentModel.ISupportInitialize)(this.pcbis)).BeginInit();
             this.grporjinal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbor)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.grpUzamsalIslemler.SuspendLayout();
+            this.grpUzamsalIslenenResim.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalorjinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalIslenen)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -111,8 +127,6 @@ namespace GoruntuIslemeProje
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -616,27 +630,127 @@ namespace GoruntuIslemeProje
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.grpUzamsalIslemler);
+            this.tabPage3.Controls.Add(this.grpUzamsalIslenenResim);
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.btnUzamsalResimYukle);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(975, 511);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Uzamsal İşlemler";
+            this.tabPage3.Text = "Gürültüler";
             // 
-            // tabPage4
+            // grpUzamsalIslemler
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(975, 511);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Dönüşümler";
+            this.grpUzamsalIslemler.Controls.Add(this.btnUzamsalIslemler);
+            this.grpUzamsalIslemler.Controls.Add(this.saltandpepperGurultu);
+            this.grpUzamsalIslemler.Controls.Add(this.uniformGurultu);
+            this.grpUzamsalIslemler.Controls.Add(this.exponentialGurultu);
+            this.grpUzamsalIslemler.Controls.Add(this.rayleighGurultu);
+            this.grpUzamsalIslemler.Controls.Add(this.gaussGurultu);
+            this.grpUzamsalIslemler.Location = new System.Drawing.Point(15, 343);
+            this.grpUzamsalIslemler.Name = "grpUzamsalIslemler";
+            this.grpUzamsalIslemler.Size = new System.Drawing.Size(471, 163);
+            this.grpUzamsalIslemler.TabIndex = 3;
+            this.grpUzamsalIslemler.TabStop = false;
+            this.grpUzamsalIslemler.Text = "İşlemler";
             // 
-            // tabPage5
+            // btnUzamsalIslemler
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(975, 511);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Histogram İşlemleri";
+            this.btnUzamsalIslemler.Location = new System.Drawing.Point(261, 81);
+            this.btnUzamsalIslemler.Name = "btnUzamsalIslemler";
+            this.btnUzamsalIslemler.Size = new System.Drawing.Size(204, 75);
+            this.btnUzamsalIslemler.TabIndex = 5;
+            this.btnUzamsalIslemler.Text = "İşlem Yap";
+            this.btnUzamsalIslemler.UseVisualStyleBackColor = true;
+            this.btnUzamsalIslemler.Click += new System.EventHandler(this.btnUzamsalIslemler_Click);
+            // 
+            // saltandpepperGurultu
+            // 
+            this.saltandpepperGurultu.AutoSize = true;
+            this.saltandpepperGurultu.Location = new System.Drawing.Point(7, 135);
+            this.saltandpepperGurultu.Name = "saltandpepperGurultu";
+            this.saltandpepperGurultu.Size = new System.Drawing.Size(172, 21);
+            this.saltandpepperGurultu.TabIndex = 4;
+            this.saltandpepperGurultu.TabStop = true;
+            this.saltandpepperGurultu.Text = "Tuz ve Biber Gürültüsü";
+            this.saltandpepperGurultu.UseVisualStyleBackColor = true;
+            // 
+            // uniformGurultu
+            // 
+            this.uniformGurultu.AutoSize = true;
+            this.uniformGurultu.Location = new System.Drawing.Point(7, 108);
+            this.uniformGurultu.Name = "uniformGurultu";
+            this.uniformGurultu.Size = new System.Drawing.Size(211, 21);
+            this.uniformGurultu.TabIndex = 3;
+            this.uniformGurultu.TabStop = true;
+            this.uniformGurultu.Text = "Bir Biçimli(Uniform) Gürültüsü";
+            this.uniformGurultu.UseVisualStyleBackColor = true;
+            // 
+            // exponentialGurultu
+            // 
+            this.exponentialGurultu.AutoSize = true;
+            this.exponentialGurultu.Location = new System.Drawing.Point(7, 81);
+            this.exponentialGurultu.Name = "exponentialGurultu";
+            this.exponentialGurultu.Size = new System.Drawing.Size(207, 21);
+            this.exponentialGurultu.TabIndex = 2;
+            this.exponentialGurultu.TabStop = true;
+            this.exponentialGurultu.Text = "Üstel(Exponential) Gürültüsü";
+            this.exponentialGurultu.UseVisualStyleBackColor = true;
+            // 
+            // rayleighGurultu
+            // 
+            this.rayleighGurultu.AutoSize = true;
+            this.rayleighGurultu.Location = new System.Drawing.Point(7, 53);
+            this.rayleighGurultu.Name = "rayleighGurultu";
+            this.rayleighGurultu.Size = new System.Drawing.Size(147, 21);
+            this.rayleighGurultu.TabIndex = 1;
+            this.rayleighGurultu.TabStop = true;
+            this.rayleighGurultu.Text = "Rayleigh Gürültüsü";
+            this.rayleighGurultu.UseVisualStyleBackColor = true;
+            // 
+            // gaussGurultu
+            // 
+            this.gaussGurultu.AutoSize = true;
+            this.gaussGurultu.Location = new System.Drawing.Point(7, 26);
+            this.gaussGurultu.Name = "gaussGurultu";
+            this.gaussGurultu.Size = new System.Drawing.Size(133, 21);
+            this.gaussGurultu.TabIndex = 0;
+            this.gaussGurultu.TabStop = true;
+            this.gaussGurultu.Text = "Gauss Gürültüsü";
+            this.gaussGurultu.UseVisualStyleBackColor = true;
+            // 
+            // grpUzamsalIslenenResim
+            // 
+            this.grpUzamsalIslenenResim.BackColor = System.Drawing.Color.White;
+            this.grpUzamsalIslenenResim.Controls.Add(this.pctUzamsalIslenen);
+            this.grpUzamsalIslenenResim.Location = new System.Drawing.Point(498, 58);
+            this.grpUzamsalIslenenResim.Name = "grpUzamsalIslenenResim";
+            this.grpUzamsalIslenenResim.Size = new System.Drawing.Size(471, 267);
+            this.grpUzamsalIslenenResim.TabIndex = 2;
+            this.grpUzamsalIslenenResim.TabStop = false;
+            this.grpUzamsalIslenenResim.Text = "İşlenen Resim";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.White;
+            this.groupBox4.Controls.Add(this.pctUzamsalorjinal);
+            this.groupBox4.Location = new System.Drawing.Point(15, 58);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(471, 267);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Orjinal Resim";
+            // 
+            // btnUzamsalResimYukle
+            // 
+            this.btnUzamsalResimYukle.Location = new System.Drawing.Point(15, 15);
+            this.btnUzamsalResimYukle.Name = "btnUzamsalResimYukle";
+            this.btnUzamsalResimYukle.Size = new System.Drawing.Size(139, 30);
+            this.btnUzamsalResimYukle.TabIndex = 0;
+            this.btnUzamsalResimYukle.Text = "Resim Yükle";
+            this.btnUzamsalResimYukle.UseVisualStyleBackColor = true;
+            this.btnUzamsalResimYukle.Click += new System.EventHandler(this.btnUzamsalResimYukle_Click);
             // 
             // tabPage6
             // 
@@ -697,6 +811,22 @@ namespace GoruntuIslemeProje
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pctUzamsalorjinal
+            // 
+            this.pctUzamsalorjinal.Location = new System.Drawing.Point(7, 23);
+            this.pctUzamsalorjinal.Name = "pctUzamsalorjinal";
+            this.pctUzamsalorjinal.Size = new System.Drawing.Size(458, 238);
+            this.pctUzamsalorjinal.TabIndex = 0;
+            this.pctUzamsalorjinal.TabStop = false;
+            // 
+            // pctUzamsalIslenen
+            // 
+            this.pctUzamsalIslenen.Location = new System.Drawing.Point(6, 22);
+            this.pctUzamsalIslenen.Name = "pctUzamsalIslenen";
+            this.pctUzamsalIslenen.Size = new System.Drawing.Size(458, 238);
+            this.pctUzamsalIslenen.TabIndex = 1;
+            this.pctUzamsalIslenen.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,8 +858,15 @@ namespace GoruntuIslemeProje
             ((System.ComponentModel.ISupportInitialize)(this.pcbis)).EndInit();
             this.grporjinal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbor)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.grpUzamsalIslemler.ResumeLayout(false);
+            this.grpUzamsalIslemler.PerformLayout();
+            this.grpUzamsalIslenenResim.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalorjinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalIslenen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -740,8 +877,6 @@ namespace GoruntuIslemeProje
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnResimYukle;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -792,6 +927,18 @@ namespace GoruntuIslemeProje
         private System.Windows.Forms.RadioButton rdbparlaklilkarsitlik;
         private System.Windows.Forms.RadioButton rdbkarsitlik;
         private System.Windows.Forms.RadioButton rdbparlaklik;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnUzamsalResimYukle;
+        private System.Windows.Forms.GroupBox grpUzamsalIslemler;
+        private System.Windows.Forms.Button btnUzamsalIslemler;
+        private System.Windows.Forms.RadioButton saltandpepperGurultu;
+        private System.Windows.Forms.RadioButton uniformGurultu;
+        private System.Windows.Forms.RadioButton exponentialGurultu;
+        private System.Windows.Forms.RadioButton rayleighGurultu;
+        private System.Windows.Forms.RadioButton gaussGurultu;
+        private System.Windows.Forms.GroupBox grpUzamsalIslenenResim;
+        private System.Windows.Forms.PictureBox pctUzamsalIslenen;
+        private System.Windows.Forms.PictureBox pctUzamsalorjinal;
     }
 }
 

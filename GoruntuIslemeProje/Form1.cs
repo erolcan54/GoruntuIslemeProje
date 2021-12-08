@@ -22,6 +22,7 @@ namespace GoruntuIslemeProje
 
         TemelIslemler temelIslemler = new TemelIslemler();
         NoktasalIslemler noktasalIslemler = new NoktasalIslemler();
+        private UzamsalIslemler uzamsalIslemler = new UzamsalIslemler();
 
         public Form1()
         {
@@ -43,6 +44,8 @@ namespace GoruntuIslemeProje
                 grpislenen.Visible = false;
                 grpnoktaislemler.Visible = false;
                 grpPlcIslemler.Visible = false;
+                grpUzamsalIslemler.Visible = false;
+                grpUzamsalIslenenResim.Visible = false;
             }
         }
 
@@ -78,7 +81,7 @@ namespace GoruntuIslemeProje
 
         private void btnNoktaIslemYap_Click(object sender, EventArgs e)
         {
-            if (!rdbesikleme.Checked && !rdbgamma.Checked && !rdbgriseviye.Checked && !rdbhistogramesitleme.Checked && !rdbhstgrmeslestirme.Checked && !rdblogdonusum.Checked && !rdbparcalilineer.Checked && !rdbtersleme.Checked)
+            if (!rdbesikleme.Checked && !rdbgamma.Checked && !rdbgriseviye.Checked && !rdbhistogramesitleme.Checked &&  !rdblogdonusum.Checked && !rdbparcalilineer.Checked && !rdbtersleme.Checked)
             {
                 MessageBox.Show("İşlem seçmediniz.");
                 return;
@@ -287,6 +290,67 @@ namespace GoruntuIslemeProje
                 rdbparlaklik.Checked = false;
                 rdbparlaklilkarsitlik.Checked = false;
                 rdbkarsitlik.Checked = false;
+            }
+        }
+
+        private void btnUzamsalResimYukle_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.InitialDirectory = @"\";
+            od.Filter = "resimler|*.*";
+            od.Multiselect = false;
+            od.FilterIndex = 2;
+            if (od.ShowDialog() == DialogResult.OK)
+            {
+                orjinalResim = Image.FromFile(od.FileName);
+                pctUzamsalorjinal.Image = orjinalResim;
+                grpUzamsalIslemler.Visible = true;
+            }
+        }
+
+        private void btnUzamsalIslemler_Click(object sender, EventArgs e)
+        {
+            if (!gaussGurultu.Checked && !rayleighGurultu.Checked && !exponentialGurultu.Checked &&
+                !uniformGurultu.Checked && !saltandpepperGurultu.Checked)
+            {
+                MessageBox.Show("İşlem seçmediniz.");
+                return;
+            }
+
+            if (gaussGurultu.Checked)
+            {
+                grpUzamsalIslenenResim.Visible = true;
+                Bitmap resim = uzamsalIslemler.GaussGurultu((Bitmap)pctUzamsalorjinal.Image);
+                pctUzamsalIslenen.Image = resim;
+                pctUzamsalIslenen.Visible = true;
+            }
+            else if (rayleighGurultu.Checked)
+            {
+                grpUzamsalIslenenResim.Visible = true;
+                Bitmap resim = uzamsalIslemler.RayleighGurultu((Bitmap)pctUzamsalorjinal.Image);
+                pctUzamsalIslenen.Image = resim;
+                pctUzamsalIslenen.Visible = true;
+            }
+            else if (exponentialGurultu.Checked)
+            {
+                grpUzamsalIslenenResim.Visible = true;
+                Bitmap resim = uzamsalIslemler.ExponentialGurultu((Bitmap)pctUzamsalorjinal.Image);
+                pctUzamsalIslenen.Image = resim;
+                pctUzamsalIslenen.Visible = true;
+            }
+            else if (uniformGurultu.Checked)
+            {
+                grpUzamsalIslenenResim.Visible = true;
+                Bitmap resim = uzamsalIslemler.UniformGurultu((Bitmap)pctUzamsalorjinal.Image);
+                pctUzamsalIslenen.Image = resim;
+                pctUzamsalIslenen.Visible = true;
+            }
+            else if (saltandpepperGurultu.Checked)
+            {
+                grpUzamsalIslenenResim.Visible = true;
+                Bitmap resim = uzamsalIslemler.SaltAndPepperGurultu((Bitmap)pctUzamsalorjinal.Image);
+                pctUzamsalIslenen.Image = resim;
+                pctUzamsalIslenen.Visible = true;
             }
         }
     }
