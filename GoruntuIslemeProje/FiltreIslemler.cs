@@ -176,11 +176,11 @@ namespace GoruntuIslemeProje
                      }
                  }
 
-                 for (int c = 0; c < 3; c++)
-                 {
-                     result[res_pixel_loc + c] = (byte)(neighborhood[c].median());
-                 }
-             }
+                    for (int c = 0; c < 3; c++)
+                    {
+                        result[res_pixel_loc + c] = (byte)(neighborhood[c][c]);
+                    }
+                }
          }
 
          Marshal.Copy(result, 0, result_data.Scan0, res_bytes);

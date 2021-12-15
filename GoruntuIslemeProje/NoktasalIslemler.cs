@@ -25,9 +25,9 @@ namespace GoruntuIslemeProje
                 for (int j = 0; j < yukseklik; j++)
                 {
                     renk = gelenResim.GetPixel(i, j);
-                    R = 255 -1- renk.R;
-                    G = 255 -1- renk.G;
-                    B = 255 -1- renk.B;
+                    R = 255 - renk.R;
+                    G = 255 - renk.G;
+                    B = 255 - renk.B;
                     gidenResim.SetPixel(i, j, Color.FromArgb(R, G, B));
                 }
             }

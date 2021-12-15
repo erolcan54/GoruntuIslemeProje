@@ -22,8 +22,8 @@ namespace GoruntuIslemeProje
 
         TemelIslemler temelIslemler = new TemelIslemler();
         NoktasalIslemler noktasalIslemler = new NoktasalIslemler();
-        private UzamsalIslemler uzamsalIslemler = new UzamsalIslemler();
-
+        UzamsalIslemler uzamsalIslemler = new UzamsalIslemler();
+        FiltreIslemler filtreIslemler = new FiltreIslemler();
         public Form1()
         {
             InitializeComponent();
@@ -46,6 +46,9 @@ namespace GoruntuIslemeProje
                 grpPlcIslemler.Visible = false;
                 grpUzamsalIslemler.Visible = false;
                 grpUzamsalIslenenResim.Visible = false;
+                grpfiltreislenenresim.Visible = false;
+                grpfiltreler.Visible = false;
+
             }
         }
 
@@ -81,7 +84,7 @@ namespace GoruntuIslemeProje
 
         private void btnNoktaIslemYap_Click(object sender, EventArgs e)
         {
-            if (!rdbesikleme.Checked && !rdbgamma.Checked && !rdbgriseviye.Checked && !rdbhistogramesitleme.Checked &&  !rdblogdonusum.Checked && !rdbparcalilineer.Checked && !rdbtersleme.Checked)
+            if (!rdbesikleme.Checked && !rdbgamma.Checked && !rdbhistogramesitleme.Checked &&  !rdblogdonusum.Checked && !rdbparcalilineer.Checked && !rdbtersleme.Checked)
             {
                 MessageBox.Show("İşlem seçmediniz.");
                 return;
@@ -351,6 +354,87 @@ namespace GoruntuIslemeProje
                 Bitmap resim = uzamsalIslemler.SaltAndPepperGurultu((Bitmap)pctUzamsalorjinal.Image);
                 pctUzamsalIslenen.Image = resim;
                 pctUzamsalIslenen.Visible = true;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.InitialDirectory = @"\";
+            od.Filter = "resimler|*.*";
+            od.Multiselect = false;
+            od.FilterIndex = 2;
+            if (od.ShowDialog() == DialogResult.OK)
+            {
+                orjinalResim = Image.FromFile(od.FileName);
+                pctfiltreorjinal.Image = orjinalResim;
+                grpfiltreler.Visible = true;
+            }
+        }
+
+        private void btnfiltreislemler_Click(object sender, EventArgs e)
+        {
+            if (!rdbaritmatikortalama.Checked&&!rdbgeometrikortalama.Checked&&!rdbharmonik.Checked&&!rdbkontraharmonik.Checked&&!rdbmedyan.Checked&&!rdbMaxMin.Checked&&!rdbmidpoint.Checked&&!rdbalfainceayar.Checked)
+            {
+                MessageBox.Show("İşlem seçmediniz.");
+                return;
+            }
+
+            if (rdbaritmatikortalama.Checked)
+            {
+                grpfiltreislenenresim.Visible = true;
+                Bitmap resim = filtreIslemler.AritmetikOrtalamaFiltre((Bitmap)pctfiltreorjinal.Image);
+                pctfiltreislenen.Image = resim;
+                pctfiltreislenen.Visible = true;
+            }
+            else if (rdbgeometrikortalama.Checked)
+            {
+                grpfiltreislenenresim.Visible = true;
+                Bitmap resim = filtreIslemler.GeometrikOrtalamaFiltre((Bitmap)pctfiltreorjinal.Image);
+                pctfiltreislenen.Image = resim;
+                pctfiltreislenen.Visible = true;
+            }
+            else if (rdbharmonik.Checked)
+            {
+                grpfiltreislenenresim.Visible = true;
+                Bitmap resim = filtreIslemler.HarmonikOrtalamaFiltre((Bitmap)pctfiltreorjinal.Image);
+                pctfiltreislenen.Image = resim;
+                pctfiltreislenen.Visible = true;
+            }
+            else if (rdbkontraharmonik.Checked)
+            {
+                grpfiltreislenenresim.Visible = true;
+                Bitmap resim = filtreIslemler.KontraHarmonikFiltre((Bitmap)pctfiltreorjinal.Image,0.5);
+                pctfiltreislenen.Image = resim;
+                pctfiltreislenen.Visible = true;
+            }
+            else if (rdbmedyan.Checked)
+            {
+                grpfiltreislenenresim.Visible = true;
+                Bitmap resim = filtreIslemler.MedyanFiltre((Bitmap)pctfiltreorjinal.Image);
+                pctfiltreislenen.Image = resim;
+                pctfiltreislenen.Visible = true;
+            }
+            else if (rdbMaxMin.Checked)
+            {
+                grpfiltreislenenresim.Visible = true;
+                Bitmap resim = filtreIslemler.MaxMinFiltre((Bitmap)pctfiltreorjinal.Image);
+                pctfiltreislenen.Image = resim;
+                pctfiltreislenen.Visible = true;
+            }
+            else if (rdbmidpoint.Checked)
+            {
+                grpfiltreislenenresim.Visible = true;
+                Bitmap resim = filtreIslemler.MidPointFiltre((Bitmap)pctfiltreorjinal.Image);
+                pctfiltreislenen.Image = resim;
+                pctfiltreislenen.Visible = true;
+            }
+            else if (rdbalfainceayar.Checked)
+            {
+                grpfiltreislenenresim.Visible = true;
+                Bitmap resim = filtreIslemler.AlfaInceAyarliOrtalamaFiltre((Bitmap)pctfiltreorjinal.Image,2);
+                pctfiltreislenen.Image = resim;
+                pctfiltreislenen.Visible = true;
             }
         }
     }

@@ -65,7 +65,6 @@ namespace GoruntuIslemeProje
             this.grpnoktaislemler = new System.Windows.Forms.GroupBox();
             this.btnNoktaIslemYap = new System.Windows.Forms.Button();
             this.rdbhistogramesitleme = new System.Windows.Forms.RadioButton();
-            this.rdbgriseviye = new System.Windows.Forms.RadioButton();
             this.rdbparcalilineer = new System.Windows.Forms.RadioButton();
             this.rdbgamma = new System.Windows.Forms.RadioButton();
             this.rdblogdonusum = new System.Windows.Forms.RadioButton();
@@ -85,16 +84,31 @@ namespace GoruntuIslemeProje
             this.rayleighGurultu = new System.Windows.Forms.RadioButton();
             this.gaussGurultu = new System.Windows.Forms.RadioButton();
             this.grpUzamsalIslenenResim = new System.Windows.Forms.GroupBox();
+            this.pctUzamsalIslenen = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pctUzamsalorjinal = new System.Windows.Forms.PictureBox();
             this.btnUzamsalResimYukle = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.grpfiltreler = new System.Windows.Forms.GroupBox();
+            this.btnfiltreislemler = new System.Windows.Forms.Button();
+            this.rdbalfainceayar = new System.Windows.Forms.RadioButton();
+            this.rdbmidpoint = new System.Windows.Forms.RadioButton();
+            this.rdbMaxMin = new System.Windows.Forms.RadioButton();
+            this.rdbmedyan = new System.Windows.Forms.RadioButton();
+            this.rdbkontraharmonik = new System.Windows.Forms.RadioButton();
+            this.rdbharmonik = new System.Windows.Forms.RadioButton();
+            this.rdbgeometrikortalama = new System.Windows.Forms.RadioButton();
+            this.rdbaritmatikortalama = new System.Windows.Forms.RadioButton();
+            this.grpfiltreislenenresim = new System.Windows.Forms.GroupBox();
+            this.pctfiltreislenen = new System.Windows.Forms.PictureBox();
+            this.grpfiltreorjresim = new System.Windows.Forms.GroupBox();
+            this.pctfiltreorjinal = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pctUzamsalorjinal = new System.Windows.Forms.PictureBox();
-            this.pctUzamsalIslenen = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grpdondurme.SuspendLayout();
@@ -115,11 +129,17 @@ namespace GoruntuIslemeProje
             this.tabPage3.SuspendLayout();
             this.grpUzamsalIslemler.SuspendLayout();
             this.grpUzamsalIslenenResim.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalIslenen)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalorjinal)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.grpfiltreler.SuspendLayout();
+            this.grpfiltreislenenresim.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctfiltreislenen)).BeginInit();
+            this.grpfiltreorjresim.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctfiltreorjinal)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalorjinal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalIslenen)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -479,7 +499,6 @@ namespace GoruntuIslemeProje
             // 
             this.grpnoktaislemler.Controls.Add(this.btnNoktaIslemYap);
             this.grpnoktaislemler.Controls.Add(this.rdbhistogramesitleme);
-            this.grpnoktaislemler.Controls.Add(this.rdbgriseviye);
             this.grpnoktaislemler.Controls.Add(this.rdbparcalilineer);
             this.grpnoktaislemler.Controls.Add(this.rdbgamma);
             this.grpnoktaislemler.Controls.Add(this.rdblogdonusum);
@@ -494,9 +513,9 @@ namespace GoruntuIslemeProje
             // 
             // btnNoktaIslemYap
             // 
-            this.btnNoktaIslemYap.Location = new System.Drawing.Point(261, 80);
+            this.btnNoktaIslemYap.Location = new System.Drawing.Point(261, 53);
             this.btnNoktaIslemYap.Name = "btnNoktaIslemYap";
-            this.btnNoktaIslemYap.Size = new System.Drawing.Size(204, 75);
+            this.btnNoktaIslemYap.Size = new System.Drawing.Size(204, 102);
             this.btnNoktaIslemYap.TabIndex = 8;
             this.btnNoktaIslemYap.Text = "İşlem Yap";
             this.btnNoktaIslemYap.UseVisualStyleBackColor = true;
@@ -505,24 +524,13 @@ namespace GoruntuIslemeProje
             // rdbhistogramesitleme
             // 
             this.rdbhistogramesitleme.AutoSize = true;
-            this.rdbhistogramesitleme.Location = new System.Drawing.Point(261, 53);
+            this.rdbhistogramesitleme.Location = new System.Drawing.Point(261, 22);
             this.rdbhistogramesitleme.Name = "rdbhistogramesitleme";
             this.rdbhistogramesitleme.Size = new System.Drawing.Size(147, 21);
             this.rdbhistogramesitleme.TabIndex = 6;
             this.rdbhistogramesitleme.TabStop = true;
             this.rdbhistogramesitleme.Text = "Histogram Eşitleme";
             this.rdbhistogramesitleme.UseVisualStyleBackColor = true;
-            // 
-            // rdbgriseviye
-            // 
-            this.rdbgriseviye.AutoSize = true;
-            this.rdbgriseviye.Location = new System.Drawing.Point(261, 25);
-            this.rdbgriseviye.Name = "rdbgriseviye";
-            this.rdbgriseviye.Size = new System.Drawing.Size(155, 21);
-            this.rdbgriseviye.TabIndex = 5;
-            this.rdbgriseviye.TabStop = true;
-            this.rdbgriseviye.Text = "Gri Seviye Dilimleme";
-            this.rdbgriseviye.UseVisualStyleBackColor = true;
             // 
             // rdbparcalilineer
             // 
@@ -731,6 +739,14 @@ namespace GoruntuIslemeProje
             this.grpUzamsalIslenenResim.TabStop = false;
             this.grpUzamsalIslenenResim.Text = "İşlenen Resim";
             // 
+            // pctUzamsalIslenen
+            // 
+            this.pctUzamsalIslenen.Location = new System.Drawing.Point(6, 22);
+            this.pctUzamsalIslenen.Name = "pctUzamsalIslenen";
+            this.pctUzamsalIslenen.Size = new System.Drawing.Size(458, 238);
+            this.pctUzamsalIslenen.TabIndex = 1;
+            this.pctUzamsalIslenen.TabStop = false;
+            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
@@ -741,6 +757,14 @@ namespace GoruntuIslemeProje
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Orjinal Resim";
+            // 
+            // pctUzamsalorjinal
+            // 
+            this.pctUzamsalorjinal.Location = new System.Drawing.Point(7, 23);
+            this.pctUzamsalorjinal.Name = "pctUzamsalorjinal";
+            this.pctUzamsalorjinal.Size = new System.Drawing.Size(458, 238);
+            this.pctUzamsalorjinal.TabIndex = 0;
+            this.pctUzamsalorjinal.TabStop = false;
             // 
             // btnUzamsalResimYukle
             // 
@@ -754,11 +778,180 @@ namespace GoruntuIslemeProje
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.grpfiltreler);
+            this.tabPage6.Controls.Add(this.grpfiltreislenenresim);
+            this.tabPage6.Controls.Add(this.grpfiltreorjresim);
+            this.tabPage6.Controls.Add(this.button6);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(975, 511);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Filtre İşlemleri";
+            // 
+            // grpfiltreler
+            // 
+            this.grpfiltreler.BackColor = System.Drawing.Color.White;
+            this.grpfiltreler.Controls.Add(this.btnfiltreislemler);
+            this.grpfiltreler.Controls.Add(this.rdbalfainceayar);
+            this.grpfiltreler.Controls.Add(this.rdbmidpoint);
+            this.grpfiltreler.Controls.Add(this.rdbMaxMin);
+            this.grpfiltreler.Controls.Add(this.rdbmedyan);
+            this.grpfiltreler.Controls.Add(this.rdbkontraharmonik);
+            this.grpfiltreler.Controls.Add(this.rdbharmonik);
+            this.grpfiltreler.Controls.Add(this.rdbgeometrikortalama);
+            this.grpfiltreler.Controls.Add(this.rdbaritmatikortalama);
+            this.grpfiltreler.Location = new System.Drawing.Point(15, 332);
+            this.grpfiltreler.Name = "grpfiltreler";
+            this.grpfiltreler.Size = new System.Drawing.Size(658, 134);
+            this.grpfiltreler.TabIndex = 3;
+            this.grpfiltreler.TabStop = false;
+            this.grpfiltreler.Text = "Filtreler";
+            // 
+            // btnfiltreislemler
+            // 
+            this.btnfiltreislemler.Location = new System.Drawing.Point(478, 50);
+            this.btnfiltreislemler.Name = "btnfiltreislemler";
+            this.btnfiltreislemler.Size = new System.Drawing.Size(170, 75);
+            this.btnfiltreislemler.TabIndex = 8;
+            this.btnfiltreislemler.Text = "İşlem Yap";
+            this.btnfiltreislemler.UseVisualStyleBackColor = true;
+            this.btnfiltreislemler.Click += new System.EventHandler(this.btnfiltreislemler_Click);
+            // 
+            // rdbalfainceayar
+            // 
+            this.rdbalfainceayar.AutoSize = true;
+            this.rdbalfainceayar.Location = new System.Drawing.Point(278, 104);
+            this.rdbalfainceayar.Name = "rdbalfainceayar";
+            this.rdbalfainceayar.Size = new System.Drawing.Size(181, 21);
+            this.rdbalfainceayar.TabIndex = 7;
+            this.rdbalfainceayar.TabStop = true;
+            this.rdbalfainceayar.Text = "Alfa İnce Ayarlı Ortalama";
+            this.rdbalfainceayar.UseVisualStyleBackColor = true;
+            // 
+            // rdbmidpoint
+            // 
+            this.rdbmidpoint.AutoSize = true;
+            this.rdbmidpoint.Location = new System.Drawing.Point(278, 77);
+            this.rdbmidpoint.Name = "rdbmidpoint";
+            this.rdbmidpoint.Size = new System.Drawing.Size(84, 21);
+            this.rdbmidpoint.TabIndex = 6;
+            this.rdbmidpoint.TabStop = true;
+            this.rdbmidpoint.Text = "Mid Point";
+            this.rdbmidpoint.UseVisualStyleBackColor = true;
+            // 
+            // rdbMaxMin
+            // 
+            this.rdbMaxMin.AutoSize = true;
+            this.rdbMaxMin.Location = new System.Drawing.Point(278, 50);
+            this.rdbMaxMin.Name = "rdbMaxMin";
+            this.rdbMaxMin.Size = new System.Drawing.Size(112, 21);
+            this.rdbMaxMin.TabIndex = 5;
+            this.rdbMaxMin.TabStop = true;
+            this.rdbMaxMin.Text = "Max Min Filtre";
+            this.rdbMaxMin.UseVisualStyleBackColor = true;
+            // 
+            // rdbmedyan
+            // 
+            this.rdbmedyan.AutoSize = true;
+            this.rdbmedyan.Location = new System.Drawing.Point(278, 22);
+            this.rdbmedyan.Name = "rdbmedyan";
+            this.rdbmedyan.Size = new System.Drawing.Size(138, 21);
+            this.rdbmedyan.TabIndex = 4;
+            this.rdbmedyan.TabStop = true;
+            this.rdbmedyan.Text = "Medyan Ortalama";
+            this.rdbmedyan.UseVisualStyleBackColor = true;
+            // 
+            // rdbkontraharmonik
+            // 
+            this.rdbkontraharmonik.AutoSize = true;
+            this.rdbkontraharmonik.Location = new System.Drawing.Point(6, 104);
+            this.rdbkontraharmonik.Name = "rdbkontraharmonik";
+            this.rdbkontraharmonik.Size = new System.Drawing.Size(194, 21);
+            this.rdbkontraharmonik.TabIndex = 3;
+            this.rdbkontraharmonik.TabStop = true;
+            this.rdbkontraharmonik.Text = "Kontra Harmonik Ortalama";
+            this.rdbkontraharmonik.UseVisualStyleBackColor = true;
+            // 
+            // rdbharmonik
+            // 
+            this.rdbharmonik.AutoSize = true;
+            this.rdbharmonik.Location = new System.Drawing.Point(7, 77);
+            this.rdbharmonik.Name = "rdbharmonik";
+            this.rdbharmonik.Size = new System.Drawing.Size(148, 21);
+            this.rdbharmonik.TabIndex = 2;
+            this.rdbharmonik.TabStop = true;
+            this.rdbharmonik.Text = "Harmonik Ortalama";
+            this.rdbharmonik.UseVisualStyleBackColor = true;
+            // 
+            // rdbgeometrikortalama
+            // 
+            this.rdbgeometrikortalama.AutoSize = true;
+            this.rdbgeometrikortalama.Location = new System.Drawing.Point(7, 50);
+            this.rdbgeometrikortalama.Name = "rdbgeometrikortalama";
+            this.rdbgeometrikortalama.Size = new System.Drawing.Size(153, 21);
+            this.rdbgeometrikortalama.TabIndex = 1;
+            this.rdbgeometrikortalama.TabStop = true;
+            this.rdbgeometrikortalama.Text = "Geometrik Ortalama";
+            this.rdbgeometrikortalama.UseVisualStyleBackColor = true;
+            // 
+            // rdbaritmatikortalama
+            // 
+            this.rdbaritmatikortalama.AutoSize = true;
+            this.rdbaritmatikortalama.Location = new System.Drawing.Point(7, 23);
+            this.rdbaritmatikortalama.Name = "rdbaritmatikortalama";
+            this.rdbaritmatikortalama.Size = new System.Drawing.Size(142, 21);
+            this.rdbaritmatikortalama.TabIndex = 0;
+            this.rdbaritmatikortalama.TabStop = true;
+            this.rdbaritmatikortalama.Text = "Aritmatik Ortalama";
+            this.rdbaritmatikortalama.UseVisualStyleBackColor = true;
+            // 
+            // grpfiltreislenenresim
+            // 
+            this.grpfiltreislenenresim.BackColor = System.Drawing.Color.White;
+            this.grpfiltreislenenresim.Controls.Add(this.pctfiltreislenen);
+            this.grpfiltreislenenresim.Location = new System.Drawing.Point(493, 58);
+            this.grpfiltreislenenresim.Name = "grpfiltreislenenresim";
+            this.grpfiltreislenenresim.Size = new System.Drawing.Size(477, 267);
+            this.grpfiltreislenenresim.TabIndex = 2;
+            this.grpfiltreislenenresim.TabStop = false;
+            this.grpfiltreislenenresim.Text = "İşlenen Resim";
+            // 
+            // pctfiltreislenen
+            // 
+            this.pctfiltreislenen.Location = new System.Drawing.Point(6, 22);
+            this.pctfiltreislenen.Name = "pctfiltreislenen";
+            this.pctfiltreislenen.Size = new System.Drawing.Size(465, 239);
+            this.pctfiltreislenen.TabIndex = 0;
+            this.pctfiltreislenen.TabStop = false;
+            // 
+            // grpfiltreorjresim
+            // 
+            this.grpfiltreorjresim.BackColor = System.Drawing.Color.White;
+            this.grpfiltreorjresim.Controls.Add(this.pctfiltreorjinal);
+            this.grpfiltreorjresim.Location = new System.Drawing.Point(15, 58);
+            this.grpfiltreorjresim.Name = "grpfiltreorjresim";
+            this.grpfiltreorjresim.Size = new System.Drawing.Size(471, 267);
+            this.grpfiltreorjresim.TabIndex = 1;
+            this.grpfiltreorjresim.TabStop = false;
+            this.grpfiltreorjresim.Text = "Orjinal Resim";
+            // 
+            // pctfiltreorjinal
+            // 
+            this.pctfiltreorjinal.Location = new System.Drawing.Point(6, 22);
+            this.pctfiltreorjinal.Name = "pctfiltreorjinal";
+            this.pctfiltreorjinal.Size = new System.Drawing.Size(459, 239);
+            this.pctfiltreorjinal.TabIndex = 0;
+            this.pctfiltreorjinal.TabStop = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(15, 15);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(139, 30);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "Resim Yükle";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // tabPage7
             // 
@@ -811,22 +1004,6 @@ namespace GoruntuIslemeProje
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pctUzamsalorjinal
-            // 
-            this.pctUzamsalorjinal.Location = new System.Drawing.Point(7, 23);
-            this.pctUzamsalorjinal.Name = "pctUzamsalorjinal";
-            this.pctUzamsalorjinal.Size = new System.Drawing.Size(458, 238);
-            this.pctUzamsalorjinal.TabIndex = 0;
-            this.pctUzamsalorjinal.TabStop = false;
-            // 
-            // pctUzamsalIslenen
-            // 
-            this.pctUzamsalIslenen.Location = new System.Drawing.Point(6, 22);
-            this.pctUzamsalIslenen.Name = "pctUzamsalIslenen";
-            this.pctUzamsalIslenen.Size = new System.Drawing.Size(458, 238);
-            this.pctUzamsalIslenen.TabIndex = 1;
-            this.pctUzamsalIslenen.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -862,11 +1039,18 @@ namespace GoruntuIslemeProje
             this.grpUzamsalIslemler.ResumeLayout(false);
             this.grpUzamsalIslemler.PerformLayout();
             this.grpUzamsalIslenenResim.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalIslenen)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalorjinal)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.grpfiltreler.ResumeLayout(false);
+            this.grpfiltreler.PerformLayout();
+            this.grpfiltreislenenresim.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctfiltreislenen)).EndInit();
+            this.grpfiltreorjresim.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctfiltreorjinal)).EndInit();
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalorjinal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctUzamsalIslenen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -917,7 +1101,6 @@ namespace GoruntuIslemeProje
         private System.Windows.Forms.GroupBox grpnoktaislemler;
         private System.Windows.Forms.Button btnNoktaIslemYap;
         private System.Windows.Forms.RadioButton rdbhistogramesitleme;
-        private System.Windows.Forms.RadioButton rdbgriseviye;
         private System.Windows.Forms.RadioButton rdbparcalilineer;
         private System.Windows.Forms.RadioButton rdbgamma;
         private System.Windows.Forms.RadioButton rdblogdonusum;
@@ -939,6 +1122,21 @@ namespace GoruntuIslemeProje
         private System.Windows.Forms.GroupBox grpUzamsalIslenenResim;
         private System.Windows.Forms.PictureBox pctUzamsalIslenen;
         private System.Windows.Forms.PictureBox pctUzamsalorjinal;
+        private System.Windows.Forms.GroupBox grpfiltreorjresim;
+        private System.Windows.Forms.PictureBox pctfiltreorjinal;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox grpfiltreislenenresim;
+        private System.Windows.Forms.PictureBox pctfiltreislenen;
+        private System.Windows.Forms.GroupBox grpfiltreler;
+        private System.Windows.Forms.RadioButton rdbaritmatikortalama;
+        private System.Windows.Forms.Button btnfiltreislemler;
+        private System.Windows.Forms.RadioButton rdbalfainceayar;
+        private System.Windows.Forms.RadioButton rdbmidpoint;
+        private System.Windows.Forms.RadioButton rdbMaxMin;
+        private System.Windows.Forms.RadioButton rdbmedyan;
+        private System.Windows.Forms.RadioButton rdbkontraharmonik;
+        private System.Windows.Forms.RadioButton rdbharmonik;
+        private System.Windows.Forms.RadioButton rdbgeometrikortalama;
     }
 }
 
