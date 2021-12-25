@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace GoruntuIslemeProje
         NoktasalIslemler noktasalIslemler = new NoktasalIslemler();
         UzamsalIslemler uzamsalIslemler = new UzamsalIslemler();
         FiltreIslemler filtreIslemler = new FiltreIslemler();
+        private MorfolojikIslemler morfoislemler = new MorfolojikIslemler();
         public Form1()
         {
             InitializeComponent();
@@ -48,7 +50,8 @@ namespace GoruntuIslemeProje
                 grpUzamsalIslenenResim.Visible = false;
                 grpfiltreislenenresim.Visible = false;
                 grpfiltreler.Visible = false;
-
+                grpmorfoislenenresim.Visible = false;
+                grpmorfoislemler.Visible = false;
             }
         }
 
@@ -437,5 +440,61 @@ namespace GoruntuIslemeProje
                 pctfiltreislenen.Visible = true;
             }
         }
+
+        private void btnmorforesimyukle_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.InitialDirectory = @"\";
+            od.Filter = "resimler|*.*";
+            od.Multiselect = false;
+            od.FilterIndex = 2;
+            if (od.ShowDialog() == DialogResult.OK)
+            {
+                orjinalResim = Image.FromFile(od.FileName);
+                pctmorfoorjinalresim.Image = orjinalResim;
+                grpmorfoislemler.Visible = true;
+            }
+        }
+
+        private void btnmorfoislemyap_Click(object sender, EventArgs e)
+        {
+            Bitmap srcImage = (Bitmap) pctmorfoorjinalresim.Image;
+            int width = srcImage.Width;
+            int height = srcImage.Height;
+
+            Rectangle canvas = new Rectangle(0, 0, width, height);
+            BitmapData srcData = srcImage.LockBits(canvas, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+
+            int bytes = srcData.Stride * srcData.Height;
+            byte[] pixelBuffer = new byte[bytes];
+            byte[] resultBuffer = new byte[bytes];
+
+            float rgb;
+            for (int i = 0; i < bytes; i += 4)
+            {
+                rgb = pixelBuffer[i] * .071f;
+                rgb += pixelBuffer[i + 1] * .71f;
+                rgb += pixelBuffer[i + 2] * .21f;
+                pixelBuffer[i] = (byte)rgb;
+                pixelBuffer[i + 1] = pixelBuffer[i];
+                pixelBuffer[i + 2] = pixelBuffer[i];
+                pixelBuffer[i + 3] = 255;
+            }
+
+            if (!rdbasinma.Checked && !rdbgenisleme.Checked)
+            {
+                MessageBox.Show("İşlem Seçilmedi.");
+                return;
+            }
+
+            if (rdbasinma.Checked)
+            {
+                grpmorfoislenenresim.Visible = true;
+                Bitmap resim = morfoislemler.Erosion(pctmorfoorjinalresim.Image);
+                pctmorfoislenenresim.Image = resim;
+                pctmorfoislenenresim.Visible = true;
+            }
+        }
+
     }
 }

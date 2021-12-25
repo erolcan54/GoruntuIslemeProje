@@ -109,6 +109,16 @@ namespace GoruntuIslemeProje
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.grpmorfoislemler = new System.Windows.Forms.GroupBox();
+            this.btnmorfoislemyap = new System.Windows.Forms.Button();
+            this.rdbgenisleme = new System.Windows.Forms.RadioButton();
+            this.rdbasinma = new System.Windows.Forms.RadioButton();
+            this.grpmorfoislenenresim = new System.Windows.Forms.GroupBox();
+            this.pctmorfoislenenresim = new System.Windows.Forms.PictureBox();
+            this.grpmorfoorjresim = new System.Windows.Forms.GroupBox();
+            this.pctmorfoorjinalresim = new System.Windows.Forms.PictureBox();
+            this.btnmorforesimyukle = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grpdondurme.SuspendLayout();
@@ -140,6 +150,12 @@ namespace GoruntuIslemeProje
             ((System.ComponentModel.ISupportInitialize)(this.pctfiltreorjinal)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.grpmorfoislemler.SuspendLayout();
+            this.grpmorfoislenenresim.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctmorfoislenenresim)).BeginInit();
+            this.grpmorfoorjresim.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctmorfoorjinalresim)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -149,6 +165,7 @@ namespace GoruntuIslemeProje
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Name = "tabControl1";
@@ -1004,6 +1021,112 @@ namespace GoruntuIslemeProje
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.grpmorfoislemler);
+            this.tabPage4.Controls.Add(this.grpmorfoislenenresim);
+            this.tabPage4.Controls.Add(this.grpmorfoorjresim);
+            this.tabPage4.Controls.Add(this.btnmorforesimyukle);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(975, 511);
+            this.tabPage4.TabIndex = 7;
+            this.tabPage4.Text = "Morfolojik İşlemler";
+            // 
+            // grpmorfoislemler
+            // 
+            this.grpmorfoislemler.BackColor = System.Drawing.Color.White;
+            this.grpmorfoislemler.Controls.Add(this.btnmorfoislemyap);
+            this.grpmorfoislemler.Controls.Add(this.rdbgenisleme);
+            this.grpmorfoislemler.Controls.Add(this.rdbasinma);
+            this.grpmorfoislemler.Location = new System.Drawing.Point(15, 332);
+            this.grpmorfoislemler.Name = "grpmorfoislemler";
+            this.grpmorfoislemler.Size = new System.Drawing.Size(465, 176);
+            this.grpmorfoislemler.TabIndex = 3;
+            this.grpmorfoislemler.TabStop = false;
+            this.grpmorfoislemler.Text = "Morfolojik İşlemler";
+            // 
+            // btnmorfoislemyap
+            // 
+            this.btnmorfoislemyap.Location = new System.Drawing.Point(304, 100);
+            this.btnmorfoislemyap.Name = "btnmorfoislemyap";
+            this.btnmorfoislemyap.Size = new System.Drawing.Size(155, 70);
+            this.btnmorfoislemyap.TabIndex = 2;
+            this.btnmorfoislemyap.Text = "İşlem Yap";
+            this.btnmorfoislemyap.UseVisualStyleBackColor = true;
+            this.btnmorfoislemyap.Click += new System.EventHandler(this.btnmorfoislemyap_Click);
+            // 
+            // rdbgenisleme
+            // 
+            this.rdbgenisleme.AutoSize = true;
+            this.rdbgenisleme.Location = new System.Drawing.Point(7, 50);
+            this.rdbgenisleme.Name = "rdbgenisleme";
+            this.rdbgenisleme.Size = new System.Drawing.Size(154, 21);
+            this.rdbgenisleme.TabIndex = 1;
+            this.rdbgenisleme.TabStop = true;
+            this.rdbgenisleme.Text = "Genişleme (Dilation)";
+            this.rdbgenisleme.UseVisualStyleBackColor = true;
+            // 
+            // rdbasinma
+            // 
+            this.rdbasinma.AutoSize = true;
+            this.rdbasinma.Location = new System.Drawing.Point(7, 23);
+            this.rdbasinma.Name = "rdbasinma";
+            this.rdbasinma.Size = new System.Drawing.Size(134, 21);
+            this.rdbasinma.TabIndex = 0;
+            this.rdbasinma.TabStop = true;
+            this.rdbasinma.Text = "Aşınma (Erosion)";
+            this.rdbasinma.UseVisualStyleBackColor = true;
+            // 
+            // grpmorfoislenenresim
+            // 
+            this.grpmorfoislenenresim.BackColor = System.Drawing.Color.White;
+            this.grpmorfoislenenresim.Controls.Add(this.pctmorfoislenenresim);
+            this.grpmorfoislenenresim.Location = new System.Drawing.Point(493, 58);
+            this.grpmorfoislenenresim.Name = "grpmorfoislenenresim";
+            this.grpmorfoislenenresim.Size = new System.Drawing.Size(477, 267);
+            this.grpmorfoislenenresim.TabIndex = 2;
+            this.grpmorfoislenenresim.TabStop = false;
+            this.grpmorfoislenenresim.Text = "İşlenen Resim";
+            // 
+            // pctmorfoislenenresim
+            // 
+            this.pctmorfoislenenresim.Location = new System.Drawing.Point(7, 23);
+            this.pctmorfoislenenresim.Name = "pctmorfoislenenresim";
+            this.pctmorfoislenenresim.Size = new System.Drawing.Size(464, 238);
+            this.pctmorfoislenenresim.TabIndex = 0;
+            this.pctmorfoislenenresim.TabStop = false;
+            // 
+            // grpmorfoorjresim
+            // 
+            this.grpmorfoorjresim.BackColor = System.Drawing.Color.White;
+            this.grpmorfoorjresim.Controls.Add(this.pctmorfoorjinalresim);
+            this.grpmorfoorjresim.Location = new System.Drawing.Point(15, 58);
+            this.grpmorfoorjresim.Name = "grpmorfoorjresim";
+            this.grpmorfoorjresim.Size = new System.Drawing.Size(471, 267);
+            this.grpmorfoorjresim.TabIndex = 1;
+            this.grpmorfoorjresim.TabStop = false;
+            this.grpmorfoorjresim.Text = "Orjinal Resim";
+            // 
+            // pctmorfoorjinalresim
+            // 
+            this.pctmorfoorjinalresim.Location = new System.Drawing.Point(7, 23);
+            this.pctmorfoorjinalresim.Name = "pctmorfoorjinalresim";
+            this.pctmorfoorjinalresim.Size = new System.Drawing.Size(458, 238);
+            this.pctmorfoorjinalresim.TabIndex = 0;
+            this.pctmorfoorjinalresim.TabStop = false;
+            // 
+            // btnmorforesimyukle
+            // 
+            this.btnmorforesimyukle.Location = new System.Drawing.Point(15, 15);
+            this.btnmorforesimyukle.Name = "btnmorforesimyukle";
+            this.btnmorforesimyukle.Size = new System.Drawing.Size(139, 30);
+            this.btnmorforesimyukle.TabIndex = 0;
+            this.btnmorforesimyukle.Text = "Resim Yükle";
+            this.btnmorforesimyukle.UseVisualStyleBackColor = true;
+            this.btnmorforesimyukle.Click += new System.EventHandler(this.btnmorforesimyukle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1051,6 +1174,13 @@ namespace GoruntuIslemeProje
             ((System.ComponentModel.ISupportInitialize)(this.pctfiltreorjinal)).EndInit();
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.grpmorfoislemler.ResumeLayout(false);
+            this.grpmorfoislemler.PerformLayout();
+            this.grpmorfoislenenresim.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctmorfoislenenresim)).EndInit();
+            this.grpmorfoorjresim.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctmorfoorjinalresim)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1137,6 +1267,16 @@ namespace GoruntuIslemeProje
         private System.Windows.Forms.RadioButton rdbkontraharmonik;
         private System.Windows.Forms.RadioButton rdbharmonik;
         private System.Windows.Forms.RadioButton rdbgeometrikortalama;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox grpmorfoislenenresim;
+        private System.Windows.Forms.PictureBox pctmorfoislenenresim;
+        private System.Windows.Forms.GroupBox grpmorfoorjresim;
+        private System.Windows.Forms.PictureBox pctmorfoorjinalresim;
+        private System.Windows.Forms.Button btnmorforesimyukle;
+        private System.Windows.Forms.GroupBox grpmorfoislemler;
+        private System.Windows.Forms.RadioButton rdbgenisleme;
+        private System.Windows.Forms.RadioButton rdbasinma;
+        private System.Windows.Forms.Button btnmorfoislemyap;
     }
 }
 
